@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/recipeFragment">
+
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.example.foodrecipeapp.ui.fragments.recipe.RecipeFragment"
+        android:label="@string/recipes_fragment"
+        tools:layout="@layout/fragment_recipe" >
+        <action
+            android:id="@+id/action_recipeFragment_to_recipeBottomSheet"
+            app:destination="@id/recipeBottomSheet" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteRecipeFragment"
+        android:name="com.example.foodrecipeapp.ui.fragments.favourite.FavouriteFragment"
+        android:label="@string/favorite_recipes_fragment"
+        tools:layout="@layout/fragment_favourite" />
+    <fragment
+        android:id="@+id/foodJokeFragment"
+        android:name="com.example.foodrecipeapp.ui.fragments.foodjoke.JokeFragment"
+        android:label="@string/joke_fragment"
+        tools:layout="@layout/fragment_joke" />
+    <dialog
+        android:id="@+id/recipeBottomSheet"
+        android:name="com.example.foodrecipeapp.ui.fragments.recipe.bottomsheet.RecipeBottomSheet"
+        android:label="recipe_bottom_sheet"
+        tools:layout="@layout/recipe_bottom_sheet"
+        >
+        <action
+            android:id="@+id/action_recipeBottomSheet_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+        <argument
+            android:name="backFromBottomSheet"
+            app:argType="boolean"
+            android:defaultValue="false" />
+
+    </dialog>
+
+</navigation>
