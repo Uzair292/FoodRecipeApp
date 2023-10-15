@@ -29,7 +29,6 @@ class MainViewModel @Inject constructor(
         repository.local.insertRecipe(recipeEntity)
     }
 
-
     /** RETROFIT **/
     val recipeResponse : MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
 
